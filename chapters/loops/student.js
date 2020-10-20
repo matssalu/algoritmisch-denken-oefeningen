@@ -149,6 +149,163 @@ function countDivisors(n) {
     }
 }
 
-function gcd(x, y){
-    
+function gcd(x, y) {
+    start = Math.min(x, y); // x - y
+
+    for (i = start; i > 1; --i) { // loop i = x - y, als i groter is dan 1, trek 1 van i af.
+        if (isDivisorOf(i, x) && isDivisorOf(i, y)) { // als ke x en y kan delen door i, return true
+            return i; // schrijf dat getal neer
+        }
+    }
+
+    return 1; //als if false zei dan return 1 omdat dat een statement is in de forloop (i is groter dan 1)
+
+    function isDivisorOf(x, y) {
+        return y % x === 0; // return true als y % x geen comma getal is
+    }
+}
+
+function lcm(x, y) { //7 en 5
+    i = Math.max(x, y); // i = 7
+
+    while (!isDivisorOf(x, i) || !isDivisorOf(y, i)) { // als 7 / 7 = false of 7 / 5 = false
+        ++i;
+    }
+
+    return i;
+
+    function isDivisorOf(x, y) {
+        return y % x === 0; //als y / x niet comma is return TRUE
+    }
+}
+
+function dice2(targetSum) {
+    count = 0;
+    for (i = 1; i <= 6; ++i) { // i = 1, moet kleiner of gelijk aan 6 zijn, + 1
+        for (j = 1; j <= 6; ++j) { // j = 1, moet kleiner of gelijk aan 6 zijn, + 1
+            if (i + j === targetSum) { // als i + j = som= true
+                count++;
+            }
+        }
+    }
+
+    return count;
+}
+
+function dice3(targetSum) {
+    count = 0;
+    for (i = 1; i <= 6; ++i) { // i = 1, moet kleiner of gelijk aan 6 zijn, + 1
+        for (j = 1; j <= 6; ++j) { // j = 1, moet kleiner of gelijk aan 6 zijn, + 1
+            for (z = 1; z <= 6; ++z) {
+                if (i + j + z === targetSum) { // als i + j = som= true
+                    count++;
+                }
+            }
+        }
+    }
+
+    return count;
+
+}
+
+function isPrime(n) {
+    for (b = 2; b < + n; ++b) {
+        if (n % b === 0) {
+            return false;
+        }
+    }
+
+    return n > 1;
+
+}
+
+function countPrimes(n) {
+    result = 0;
+    for (i = 0; i <= n; ++i) {
+        if (isPrime(i)) {
+            result++;
+        }
+    }
+    return result;
+}
+
+function power2(a, b) {
+    resultaat = 1;
+    for (z = 0; z < b; ++z) {
+        resultaat = resultaat * a;
+    }
+
+    return resultaat;
+}
+
+function sumRange2(from, to) {
+    teller = 0;
+    for (i = from; i <= to; ++i) {
+        teller = teller + i;
+    }
+
+    return teller;
+}
+
+function invest(years) {
+    teller = 1000;
+    for (i = 0; i !== years; ++i) {
+        teller = teller * 1.05;
+        teller = teller + 100;
+    }
+
+    return teller;
+}
+
+function invest2(goal) {
+    current = 1000;
+    for (i = 0; current < goal; ++i) {
+        current = current * 1.05;
+        current = current + 100;
+
+    }
+    return i;
+}
+
+function dice4(targetSum) {
+    count = 0;
+    for (i = 1; i <= 6; ++i) { // i = 1, moet kleiner of gelijk aan 6 zijn, + 1
+        for (j = 1; j <= 6; ++j) { // j = 1, moet kleiner of gelijk aan 6 zijn, + 1
+            for (z = 1; z <= 6; ++z) {
+                for (y = 1; y <= 6; ++y) {
+                    if (i + j + z + y === targetSum) { // als i + j = som= true
+                        count++;
+                    }
+                }
+            }
+        }
+    }
+
+    return count;
+}
+
+function pythagoreanTriples(n) {
+    let count = 0;
+    for (let a = 1; a <= n; ++a) {
+        for (let b = 1; b <= n; ++b) {
+            const c = (a ** 2 + b ** 2) ** 0.5;
+            if (Number.isInteger(c) && c <= n) {
+                ++count;
+            }
+        }
+    }
+    return count;
+}
+
+function pythagoreanTriples2(n){
+    let count = 0;
+    for (let a = 1; a <= n; ++a) {
+        for (let b = a; b <= n; ++b) {
+            const c = (a ** 2 + b ** 2) ** 0.5;
+            if (Number.isInteger(c) && c <= n) {
+                ++count;
+            }
+        }
+    }
+    return count;
 }

@@ -110,3 +110,33 @@ function count(value, xs) {
     }
     return aantal;
 }
+
+function minimum(ns) {
+    let result = Number.POSITIVE_INFINITY;
+    for (let n of ns) {
+        if (result > n) {
+            result = n;
+        }
+    }
+    return result;
+}
+
+function allEqual(xs){
+    for(i = 1; i < xs.length; ++i){
+        if(xs[i] !== xs[0]){
+            return false;
+        }
+    }
+    return true;
+}   
+
+function allDifferent(xs) {
+    for (let i = 0; i !== xs.length; ++i) {
+        for (let j = i + 1; j < xs.length; ++j) {
+            if (xs[i] === xs[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}

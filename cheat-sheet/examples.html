@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.12">
-<title>Cheat Sheet</title>
+<title>Voorbeelden</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -651,575 +651,121 @@ pre.rouge {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Cheat Sheet</h1>
+<h1>Voorbeelden</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_statements">Statements</a>
-<ul class="sectlevel2">
-<li><a href="#_if"><code>if</code></a></li>
-<li><a href="#_lussen">Lussen</a>
-<ul class="sectlevel3">
-<li><a href="#_while"><code>while</code></a></li>
-<li><a href="#_for"><code>for</code></a></li>
-<li><a href="#_for_in_object"><code>for in object</code></a></li>
-<li><a href="#_for_of_array"><code>for of array</code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_wiskundige_bewerkingen">Wiskundige Bewerkingen</a>
-<ul class="sectlevel2">
-<li><a href="#_operatoren">Operatoren</a></li>
-<li><a href="#_math"><code>Math</code></a></li>
-</ul>
-</li>
-<li><a href="#_logische_operatoren">Logische Operatoren</a>
-<ul class="sectlevel2">
-<li><a href="#_waarheidstabellen">Waarheidstabellen</a></li>
-</ul>
-</li>
-<li><a href="#_stringoperaties">Stringoperaties</a></li>
-<li><a href="#_arrayoperaties">Arrayoperaties</a>
-<ul class="sectlevel2">
-<li><a href="#_eerste_orde_functies">Eerste Orde Functies</a></li>
-<li><a href="#_hogere_orde_functies">Hogere Orde Functies</a></li>
-</ul>
-</li>
+<li><a href="#array-sort">array.sort</a></li>
+<li><a href="#array-foreach">array.forEach</a></li>
+<li><a href="#array-every">array.every</a></li>
+<li><a href="#array-some">array.some</a></li>
+<li><a href="#array-filter">array.filter</a></li>
+<li><a href="#array-find">array.find</a></li>
+<li><a href="#array-map">array.map</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_statements">Statements</h2>
+<h2 id="array-sort">array.sort</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_if"><code>if</code></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="javascript"><span class="k">if</span> <span class="p">(</span> <span class="nx">conditie</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Indien conditie waar</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="c1">// Indien conditie vals</span>
-<span class="p">}</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_lussen">Lussen</h3>
-<div class="sect3">
-<h4 id="_while"><code>while</code></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="javascript"><span class="k">while</span> <span class="p">(</span> <span class="nx">conditie</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Herhaald zolang conditie waar is</span>
-<span class="p">}</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_for"><code>for</code></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="javascript"><span class="k">for</span> <span class="p">(</span> <span class="nx">init</span><span class="p">;</span> <span class="nx">conditie</span><span class="p">;</span> <span class="nx">update</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Herhaald zolang conditie waar is</span>
-<span class="p">}</span>
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-<span class="c1">// is equivalent met</span>
+<span class="c1">// x - y is negatief indien x &lt; y en positief indien x &gt; y</span>
+<span class="nx">xs</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">-</span> <span class="nx">y</span> <span class="p">);</span>
 
-<span class="nx">init</span><span class="p">;</span>
-
-<span class="k">while</span> <span class="p">(</span> <span class="nx">conditie</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Herhaald zolang conditie waar is</span>
-
-    <span class="nx">update</span><span class="p">;</span>
-<span class="p">}</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_for_in_object"><code>for in object</code></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="javascript"><span class="k">for</span> <span class="p">(</span> <span class="kd">const</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">object</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// i gaat de **keys** af van object</span>
-<span class="p">}</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_for_of_array"><code>for of array</code></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="javascript"><span class="k">for</span> <span class="p">(</span> <span class="kd">const</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">array</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// i gaat de **waarden** af van array</span>
-<span class="p">}</span>
-
-<span class="c1">// is equivalent met</span>
-
-<span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">!==</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span></code></pre>
-</div>
-</div>
+<span class="c1">// xs == [1, 2, 4, 5, 6, 10]</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wiskundige_bewerkingen">Wiskundige Bewerkingen</h2>
+<h2 id="array-foreach">array.forEach</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_operatoren">Operatoren</h3>
-<table class="tableblock frame-all grid-all center" style="width: 50%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Syntax</th>
-<th class="tableblock halign-center valign-top">Betekenis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x + y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Optelling</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x - y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Aftrekking</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>-x</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Tegengestelde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x * y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vermenigvuldiging</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x / y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Deling</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x % y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Modulo (rest)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x ** y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Machtsverheffing</p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="nx">xs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Print a b c d af</span></code></pre>
 </div>
-<div class="sect2">
-<h3 id="_math"><code>Math</code></h3>
-<table class="tableblock frame-all grid-all center" style="width: 80%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Syntax</th>
-<th class="tableblock halign-center valign-top">Betekenis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Math.abs(x)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Absolute waarde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Math.sqrt(x)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vierkantswortel</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Math.ceil(x)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Naar boven afronden</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Math.floor(x)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Naar beneden afronden</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Math.min(x1, x2, x3, &#8230;&#8203;)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Minimum</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Math.max(x1, x2, x3, &#8230;&#8203;)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Maximum</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_logische_operatoren">Logische Operatoren</h2>
+<h2 id="array-every">array.every</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all center" style="width: 50%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Syntax</th>
-<th class="tableblock halign-center valign-top">Betekenis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x || y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Disjunctie (OF)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x &amp;&amp; y</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Conjunctie (EN)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!x</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Negatie (NIET)</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="_waarheidstabellen">Waarheidstabellen</h3>
-<table class="tableblock frame-all grid-all center" style="width: 40%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top"><code>x</code></th>
-<th class="tableblock halign-center valign-top"><code>y</code></th>
-<th class="tableblock halign-center valign-top"><code>x || y</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all center" style="width: 50%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top"><code>x</code></th>
-<th class="tableblock halign-center valign-top"><code>y</code></th>
-<th class="tableblock halign-center valign-top"><code>x &amp;&amp; y</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all center" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top"><code>x</code></th>
-<th class="tableblock halign-center valign-top"><code>!x</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+
+<span class="c1">// Is elk getal in x positief?</span>
+<span class="k">if</span> <span class="p">(</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_stringoperaties">Stringoperaties</h2>
+<h2 id="array-some">array.some</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all center" style="width: 80%;">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Syntax</th>
-<th class="tableblock halign-center valign-top">Betekenis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length"><code>s.length</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Lengte</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt"><code>s.charAt(i)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Teken op <code>i</code>-de positie</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith"><code>s.startsWith(s2)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Begint <code>s</code> met <code>s2</code>?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith"><code>s.endsWith(s2)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Eindigt <code>s</code> op <code>s2</code>?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf"><code>s.indexOf(s2)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Waar komt <code>s2</code> het eerst voor in <code>s</code>?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf"><code>s.lastIndexOf(s2)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Waar komt <code>s2</code> het laatst voor in <code>s</code>?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart"><code>s.padStart(n, c)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vult links aan met <code>c</code> tot lengte <code>n</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd"><code>s.padEnd(n, c)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vult rechts aan met <code>c</code> tot lengte <code>n</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat"><code>s.repeat(n)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Herhaal <code>s</code> <code>n</code> keer</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace"><code>s.replace(x, y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vervang eerste voorkomen van <code>x</code> door <code>y</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"><code>s.replaceAll(x, y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vervang alle voorkomens van <code>x</code> door <code>y</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice"><code>s.slice(i)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Deelstring van index <code>i</code> tot einde.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice"><code>s.slice(i, j)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Deelstring van index <code>i</code> tot index <code>j</code> (excl.)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>s.split(sep)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Splits string op</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase"><code>s.toLowerCase()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Zet om naar kleine letters</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"><code>s.toUpperCase()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Zet om naar hoofdletters</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim"><code>s.trim()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Verwijder whitespace aan begin en einde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart"><code>s.trimStart()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Verwijder whitespace aan begin</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd"><code>s.trimEnd()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Verwijder whitespace aan einde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">` <code>abc ${x} xyz</code> `</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Stringinterpolatie</p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+
+<span class="c1">// Bevat xs een positief getal?</span>
+<span class="k">if</span> <span class="p">(</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">any</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_arrayoperaties">Arrayoperaties</h2>
+<h2 id="array-filter">array.filter</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_eerste_orde_functies">Eerste Orde Functies</h3>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Syntax</th>
-<th class="tableblock halign-center valign-top">Betekenis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length"><code>xs.length</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Lengte</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"><code>[&#8230;&#8203;xs, &#8230;&#8203;ys</a></code>]</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Spread operator</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><code>xs.push(y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Voeg <code>y</code> toe aan einde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><code>xs.pop()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Verwijder laatste element</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"><code>xs.unshift(y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Voeg <code>y</code> toe aan begin</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"><code>xs.shift()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Verwijder eerste element</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"><code>xs.includes(y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Is <code>y</code> een element van <code>xs</code>?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"><code>xs.reverse()</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Keer array om</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><code>xs.fill(y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vul de array met <code>y</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><code>xs.fill(y, i)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vul de array met <code>y</code> vanaf positie <code>i</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><code>xs.fill(y, i, j)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Vul de array met <code>y</code> van posities <code>i</code> tot <code>j</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"><code>xs.indexOf(y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Index van eerste voorkomen van <code>y</code> in <code>xs</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf"><code>xs.lastIndexOf(y)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Index van laatste voorkomen van <code>y</code> in <code>xs</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">onlyPositive</span> <span class="o">=</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// xs == [1, -2, 3, -4, 5]</span>
+<span class="c1">// onlyPositive == [1, 3, 5]</span></code></pre>
 </div>
-<div class="sect2">
-<h3 id="_hogere_orde_functies">Hogere Orde Functies</h3>
-<table class="tableblock frame-all grid-all center" style="width: 90%;">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 57.1428%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Syntax</th>
-<th class="tableblock halign-center valign-top">Betekenis</th>
-<th class="tableblock halign-center valign-top"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>xs.sort(cmp)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Sorteer array</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-sort">voorbeeld</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code>xs.forEach(f)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Voer <code>f(x)</code> uit voor elke <code>x</code> van <code>xs</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-foreach">voorbeeld</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><code>xs.every(f)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Is <code>f(x)</code> <code>true</code> voor elke <code>x</code> in <code>xs</code>?</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-every">voorbeeld</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some"><code>xs.some(f)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Is <code>f(x)</code> <code>true</code> voor minstens één <code>x</code> in <code>xs</code>?</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-some">voorbeeld</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"><code>xs.filter(f)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Selecteer die <code>x</code> waarvoor <code>f(x)</code> <code>true</code> oplevert</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-filter">voorbeeld</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find"><code>xs.find(f)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Eerste element <code>x</code> waarvoor <code>f(x)</code> <code>true</code> oplevert</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-find">voorbeeld</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>xs.map(f)</code></a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Reken <code>f(x)</code> uit voor elk element en verzamel resultaten</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#array-map">voorbeeld</a></p></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="array-find">array.find</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">firstHigherThanFive</span> <span class="o">=</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// firstHigherThanFive == 7</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="array-map">array.map</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">doubles</span> <span class="o">=</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// doubles == [2, 4, 6, 8]</span></code></pre>
+</div>
 </div>
 </div>
 </div>

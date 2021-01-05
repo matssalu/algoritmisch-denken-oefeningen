@@ -662,6 +662,12 @@ pre.rouge {
 <li><a href="#array-filter">array.filter</a></li>
 <li><a href="#array-find">array.find</a></li>
 <li><a href="#array-map">array.map</a></li>
+<li><a href="#object-lookup">Object Lookup</a></li>
+<li><a href="#object-lookup2">Object Lookup 2</a></li>
+<li><a href="#object-membership">Object Key Membership</a></li>
+<li><a href="#object-keys">Object Keys</a></li>
+<li><a href="#object-values">Object Values</a></li>
+<li><a href="#object-entries">Object Entries</a></li>
 </ul>
 </div>
 </div>
@@ -765,6 +771,97 @@ pre.rouge {
 <span class="kd">const</span> <span class="nx">doubles</span> <span class="o">=</span> <span class="nx">xs</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
 
 <span class="c1">// doubles == [2, 4, 6, 8]</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="object-lookup">Object Lookup</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">b</span><span class="p">;</span> <span class="c1">// 2</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">c</span><span class="p">;</span> <span class="c1">// 3</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="object-lookup2">Object Lookup 2</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">];</span> <span class="c1">// 1</span>
+<span class="nx">obj</span><span class="p">[</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">];</span> <span class="c1">// 2</span>
+<span class="nx">obj</span><span class="p">[</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">];</span> <span class="c1">// 3</span>
+
+<span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span> <span class="c1">// 1</span>
+
+<span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span> <span class="c1">// 2</span>
+
+<span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span> <span class="c1">// 3</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="object-membership">Object Key Membership</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="dl">'</span><span class="s1">a</span><span class="dl">'</span> <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// true</span>
+<span class="dl">'</span><span class="s1">b</span><span class="dl">'</span> <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// true</span>
+<span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// true</span>
+<span class="dl">'</span><span class="s1">x</span><span class="dl">'</span> <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// false</span>
+ <span class="mi">1</span>  <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// false</span>
+ <span class="mi">2</span>  <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// false</span>
+ <span class="mi">3</span>  <span class="k">in</span> <span class="nx">obj</span>   <span class="c1">// false</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="object-keys">Object Keys</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// [ 'a', 'b', 'c' ]</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="object-values">Object Values</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// [ 1, 2, 3 ]</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="object-entries">Object Entries</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="javascript"><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// [ ['a', 1], ['b', 2], ['c', 3] ]</span></code></pre>
 </div>
 </div>
 </div>

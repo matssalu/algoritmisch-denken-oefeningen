@@ -686,6 +686,7 @@ pre.rouge {
 <li><a href="#_hogere_orde_functies">Hogere Orde Functies</a></li>
 </ul>
 </li>
+<li><a href="#_objectoperaties">Objectoperaties</a></li>
 </ul>
 </div>
 </div>
@@ -1221,6 +1222,67 @@ pre.rouge {
 </tbody>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_objectoperaties">Objectoperaties</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all center" style="width: 90%;">
+<colgroup>
+<col style="width: 37.5%;">
+<col style="width: 50%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Syntax</th>
+<th class="tableblock halign-center valign-top">Betekenis</th>
+<th class="tableblock halign-center valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>obj.key</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Lookup: <code>key</code> wordt rechtstreeks als key gebruikt wordt</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#object-lookup">voorbeeld</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>obj[key]</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Lookup: <code>key</code> is een <em>expressie</em> die evaleert tot de key</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#object-lookup2">voorbeeld</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>obj.key = value</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Invoeren/overschrijven key/value pair</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>obj[key] = value</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Invoeren/overschrijven key/value pair</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>x in obj</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Is <code>x</code> een key van <code>obj</code>?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#object-membership">voorbeeld</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Object.keys(obj)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Array van keys van <code>obj</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#object-keys">voorbeeld</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Object.values(obj)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Array van values van <code>obj</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#object-values">voorbeeld</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Object.entries(obj)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Array van <code>[key, value]</code> koppels</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="examples.html#object-entries">voorbeeld</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

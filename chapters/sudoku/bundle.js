@@ -1586,13 +1586,13 @@ function copyGrid(grid) {
     return grid.map(row => row.map(ns => [...ns]));
 }
 exports.copyGrid = copyGrid;
-exports.split = algo_testing_framework_1.packSingleSolution(function split(grid, position) {
+exports.split = ((fix) => algo_testing_framework_1.packSingleSolution(function split(grid, position) {
     return grid[position.row][position.column].map(n => {
         const copy = copyGrid(grid);
-        exports.fix(copy, position, n);
+        fix(copy, position, n);
         return copy;
     });
-}, [copyGrid]);
+}, [copyGrid]))(exports.fix);
 function isInvalid(grid) {
     return grid.some(row => row.some(ns => ns.length === 0));
 }
@@ -1619,7 +1619,7 @@ exports.findLeastUncertain = ((allPositions) => function findLeastUncertain(grid
         return grid[p.row][p.column];
     }
 })(exports.allPositions);
-exports.solve = ((split, allPositions, findLeastUncertain, isInvalid) => algo_testing_framework_1.packSingleSolution(function solve(grid) {
+exports.solve = ((split, allPositions, findLeastUncertain, isInvalid, fix) => algo_testing_framework_1.packSingleSolution(function solve(grid) {
     return aux(copyGrid(grid), allPositions());
     function aux(grid, ps) {
         const [singletonPositions, nonsingletonPositions] = partition(ps, p => grid[p.row][p.column].length === 1);
@@ -1633,7 +1633,7 @@ exports.solve = ((split, allPositions, findLeastUncertain, isInvalid) => algo_te
             for (const p of singletonPositions) {
                 const n = grid[p.row][p.column][0];
                 if (n) {
-                    exports.fix(grid, p, n);
+                    fix(grid, p, n);
                 }
             }
             return aux(grid, nonsingletonPositions);
@@ -1643,7 +1643,7 @@ exports.solve = ((split, allPositions, findLeastUncertain, isInvalid) => algo_te
             return flatten(split(grid, leastUncertainPosition).map(g => aux(g, ps)));
         }
     }
-}, [isInvalid, flatten, findLeastUncertain]))(exports.split, exports.allPositions, exports.findLeastUncertain, isInvalid);
+}, [isInvalid, flatten, findLeastUncertain]))(exports.split, exports.allPositions, exports.findLeastUncertain, isInvalid, exports.fix);
 
 
 /***/ }),
